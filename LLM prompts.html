@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPARQL queries</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Comic Sans MS, sans-serif;
+            text-align: center;
+            background-color: #f0c294   
+            ;
+           
+        }
+        .hero-image img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    display: block;
+}
+        
+
+        /* Header */
+        header {
+            background-color: #5c4033;
+            padding: 15px 0;
+            border-bottom: 1px solid #5c4033;
+        }
+
+        nav a {
+            margin: 0 60px;
+            text-decoration: none;
+            color: rgb(249, 251, 252);
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #d4a373;
+        }
+
+        /* Sections */
+        section {
+            margin: 100px auto;
+            max-width: 800px;
+        }
+
+        h1 {
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 50px;
+        }
+
+        p {
+            font-size: 18px;
+        }
+
+
+
+
+        /* Creators */
+        .creators {
+            display: flex;
+            justify-content: center;
+            gap: 80px;
+            margin-top: 30px;
+        }
+
+        .creator {
+            text-align: center;
+        }
+
+        .photo {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            border: 2px solid #000;
+            object-fit: cover;
+        }
+
+        .name {
+            margin-top: 10px;
+            font-style: italic;
+            font-size: 18px;
+        }
+        footer {
+            background-color: #5c4033;
+            color: white;
+            padding: 15px 20px;
+          
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            text-align:left;
+            box-sizing: border-box;
+        }
+        .query-box {
+    background-color: #f5f5f5;
+    border-left: 6px solid #5c4033;
+    padding: 25px;
+    text-align: left;
+    white-space: pre-wrap;
+    font-size: 18px;
+    margin: 30px auto;
+    width: 85%;
+}
+  footer {
+            background-color: #5c4033;
+            color: white;
+            padding: 15px 20px;
+          
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            text-align:left;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+
+     <!-- Header -->
+    <header>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="studying.html">Studying</a>
+            <a href="SPARQL queries.html">SPARQL queries</a>
+            <a href="gap analysis.html">Gap Analysis</a>
+            <a href="LLM prompts.html">LLM prompts</a>
+            <a href="conclusions.html">Conclusions</a>
+        </nav>
+    </header>
+
+	<section id="llm-comparison">
+	<h1>General Information</h1>
+ 
+	<p>
+    	Large Language Models (LLMs) are artificial intelligence systems trained on vast amounts
+    	of textual data to understand and generate human language. These models are increasingly
+    	used to access, summarize, and interpret information related to cultural heritage.
+	</p>
+ 
+	<p>
+    	The purpose of this section is to evaluate how different LLMs describe and contextualize
+    	the <strong>Cattedrale di Santa Maria del Fiore</strong>, one of the most iconic examples
+    	of Gothic and Renaissance architecture. By comparing their responses, this project aims
+    	to explore the strengths and limitations of AI-generated interpretations of historical
+    	and architectural knowledge.
+	</p>
+ 
+	<p>The models were asked to discuss the following aspects of the cathedral:</p>
+ 
+	<ol>
+    	<li>
+        	<strong>Dome</strong> – its historical importance, architectural innovation,
+        	and significance within the identity of Florence.
+    	</li>
+ 
+    	<li>
+        	<strong>The Illusion of Size</strong> – how architectural elements,
+        	proportions, and spatial design contribute to the perception of the cathedral's
+        	monumental scale and grandeur.
+    	</li>
+	</ol>
+ 
+	<p>The models compared in this project are:</p>
+ 
+	<ul>
+    	<li>ChatGPT (OpenAI)</li>
+    	<li>Gemini (Google)</li>
+    </ul>
+ 
+    <!-- DOME -->
+    <h2>1. Dome</h2>
+ 
+	<div class="comparison-container">
+ 
+    	<div class="ai-box">
+        	<h3>ChatGPT (OpenAI)</h3>
+ 
+        	<p>
+            	The Dome of the Cathedral of Santa Maria del Fiore, commonly known as Brunelleschi’s Dome, is one of the greatest achievements of Renaissance architecture and engineering. Designed by Filippo Brunelleschi and built between 1420 and 1436, it was the largest dome in the world at the time and remains the largest masonry dome ever constructed. Rising about 116 meters (381 feet) above Florence, the dome has an internal diameter of 45.5 meters and was revolutionary because it was built without the traditional wooden scaffolding that architects had previously considered essential. Brunelleschi solved this challenge by creating a double-shell structure connected by ribs and using an innovative herringbone brick pattern that allowed the dome to support itself during construction. Inside, visitors can admire the immense fresco of the Last Judgment painted by Giorgio Vasari and later completed by Federico Zuccari. Climbing the 463 steps to the top rewards visitors with breathtaking panoramic views of Florence and the surrounding Tuscan landscape. Today, the dome remains the symbol of Florence and a masterpiece that transformed the history of architecture.
+        	</p>
+    	</div>
+ 
+    	<div class="ai-box">
+        	<h3>Gemini (Google)</h3>
+ 
+      	  <p>
+            	Engineered by Filippo Brunelleschi and completed in 1436, the dome of Cattedrale di Santa Maria del Fiore in Florence remains the largest masonry dome ever built. To span the massive 45-meter-wide octagonal opening without the support of traditional wooden scaffolding, Brunelleschi designed a revolutionary double-shell structure made of a light inner dome and a protective outer shell, defined on the exterior by its massive white marble ribs. He cleverly arranged millions of bricks in a self-supporting herringbone pattern—interlocking vertical and horizontal rows—to redirect the immense downward weight outward into the octagonal base, solving an engineering riddle that had baffled Renaissance builders for decades and permanently changing the course of Western architecture.
+        	</p>
+    	</div>
+ 
+	</div>
+ 
+	<!-- ILLUSION OF SIZE -->
+	<h2>2. The Illusion of Size</h2>
+ 
+	<div class="comparison-container">
+ 
+    	<div class="ai-box">
+        	<h3>ChatGPT (OpenAI)</h3>
+ 
+        	<p>
+The illusion of the size of Santa Maria del Fiore Cathedral is created by several architectural techniques that make the building appear even larger and more impressive than it already is. The cathedral's enormous dome dominates the skyline of Florence and can be seen from many parts of the city, giving the impression that the building is closer and bigger than it actually is. Brunelleschi also designed the dome with a pointed shape and strong vertical lines that draw the viewer's eyes upward, emphasizing its height. In addition, the wide open spaces around the cathedral allow people to see the entire structure at once, making its scale feel overwhelming. Inside, the vast nave, high ceilings, and long perspective lines create a sense of endless space, making visitors perceive the interior as even larger than its actual dimensions. These visual effects were carefully planned to inspire awe and to demonstrate the wealth, power, and artistic achievements of Florence during the Renaissance.
+        	</p>
+    	</div>
+ 
+    	<div class="ai-box">
+        	<h3>Gemini (Google)</h3>
+ 
+        	<p>
+When step into the interior of Santa Maria del Fiore, you experience a striking, deliberate optical illusion: the cathedral initially feels much smaller, shorter, and more compact than its gargantuan exterior suggests. This is a psychological and architectural trick born from the Florentine Gothic style, which prioritized severe minimalism and massive human scale over the busy, soaring verticality of French Gothic churches.
+Instead of breaking the space up with hundreds of slender, repeating columns that give the eye a frame of reference for distance, the architects designed the nave with only four colossal, widely spaced bays (square sections) held up by massive, plain stone pillars. Because there are so few repeating architectural elements to count as your eyes scan the length of the building, your brain miscalculates the distance, condensing the vast space. The bare, austere whitewashed walls offer no decorative details or intricate carvings to provide a sense of depth, causing the walls to feel closer than they are. It is only when you notice the actual humans walking across the floor—looking like tiny, moving ants next to the towering columns—or when you stand directly beneath the dome and look up at the massive 3,600-square-meter Last Judgment fresco that the true, staggering scale of the world's fifth-largest cathedral suddenly hits you.
+ 
+        	</p>
+    	</div>
+ 
+	</div>
+ 
+</section>
+
+
+	 <footer>
+        Knowledge Engineering for The Humanities (LM) 2026
+    </footer>

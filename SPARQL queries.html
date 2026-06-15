@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPARQL queries</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Comic Sans MS, sans-serif;
+            text-align: center;
+            background-color: #f0c294   
+            ;
+           
+        }
+        .hero-image img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    display: block;
+}
+        
+
+        /* Header */
+        header {
+            background-color: #5c4033;
+            padding: 15px 0;
+            border-bottom: 1px solid #5c4033;
+        }
+
+        nav a {
+            margin: 0 60px;
+            text-decoration: none;
+            color: rgb(249, 251, 252);
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #d4a373;
+        }
+
+        /* Sections */
+        section {
+            margin: 100px auto;
+            max-width: 800px;
+        }
+
+        h2 {
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 50px;
+            margin-top: 50px;
+        }
+
+        p {
+            font-size: 18px;
+        }
+
+
+
+
+        /* Creators */
+        .creators {
+            display: flex;
+            justify-content: center;
+            gap: 80px;
+            margin-top: 30px;
+        }
+
+        .creator {
+            text-align: center;
+        }
+
+        .photo {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            border: 2px solid #000;
+            object-fit: cover;
+        }
+
+        .name {
+            margin-top: 10px;
+            font-style: italic;
+            font-size: 18px;
+        }
+        footer {
+            background-color: #5c4033;
+            color: white;
+            padding: 15px 20px;
+          
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            text-align:left;
+            box-sizing: border-box;
+        }
+        .query-box {
+    background-color: #f5f5f5;
+    border-left: 6px solid #5c4033;
+    padding: 25px;
+    text-align: left;
+    white-space: pre-wrap;
+    font-size: 18px;
+    margin: 30px auto;
+    width: 85%;
+}
+  footer {
+            background-color: #5c4033;
+            color: white;
+            padding: 15px 20px;
+          
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            text-align:left;
+            box-sizing: border-box;
+        }
+            main {
+    padding-bottom: 100px;
+}
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="studying.html">Studying</a>
+            <a href="SPARQL queries.html">SPARQL queries</a>
+            <a href="gap analysis.html">Gap Analysis</a>
+            <a href="LLM Prompts.html">LLM Prompts</a>
+            <a href="conclusions.html">Conclusions</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Query 1</h2>
+
+<p>
+    First, we used the following query to find the
+    <i>Cattedrale di Santa Maria del Fiore</i>
+    in the ArCo database, after choosing the subject for our topic:
+</p>
+
+<pre class="query-box">
+PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+PREFIX arco: &lt;https://w3id.org/arco/ontology/arco/&gt;
+
+SELECT DISTINCT ?building ?label
+WHERE {
+    ?building a arco:HistoricOrArtisticProperty ;
+              rdfs:label ?label .
+
+    FILTER(REGEX(?label, "Santa Maria del Fiore", "i"))
+}
+
+LIMIT 100
+</pre>
+<p>
+    We found many irrelevant results, mostly to paintings, and decided to narrow the search by adding
+    the name of the architect to the query.
+</p>
+<p>
+    The results of this query can be viewed here:
+    <a href="https://dati.cultura.gov.it/sparql?default-graph-uri=&query=PREFIX+rdfs%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E%0D%0APREFIX+arco%3A+%3Chttps%3A%2F%2Fw3id.org%2Farco%2Fontology%2Farco%2F%3E%0D%0A%0D%0ASELECT+DISTINCT+%3Fbuilding+%3Flabel%0D%0AWHERE+%7B%0D%0A++++%3Fbuilding+a+arco%3AHistoricOrArtisticProperty+%3B%0D%0A++++++++++++++rdfs%3Alabel+%3Flabel+.%0D%0A%0D%0A++++FILTER%28REGEX%28%3Flabel%2C+%22Santa+Maria+del+Fiore%22%2C+%22i%22%29%29%0D%0A%7D%0D%0A%0D%0ALIMIT+100%0D%0A&format=text%2Fhtml&timeout=0&signal_void=on" target="_blank">LINK</a>
+</p>
+
+<h2>Query 2</h2>
+
+<p>
+    We added a clarification that this is a cathedral (building type) and we also decided to add the name of the architect of the dome, as this part of the church is unique. However, this was a mistake, as this filter is too rigid and we
+    got 0 results😩😩😩.
+</p>
+
+<pre class="query-box">
+PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+PREFIX arco: &lt;https://w3id.org/arco/ontology/arco/&gt;
+PREFIX a-cd: &lt;https://w3id.org/arco/ontology/catalogue/&gt;
+
+SELECT DISTINCT ?cathedral ?label
+WHERE {
+  {
+    ?cathedral a arco:HistoricOrArtisticProperty ;
+               rdfs:label ?label .
+
+    FILTER(REGEX(?label, "Cattedrale di Santa Maria del Fiore", "i"))
+    FILTER(REGEX(?label, "Brunelleschi", "i"))
+  }
+
+  UNION
+
+  {
+    ?cathedral a arco:HistoricOrArtisticProperty ;
+               rdfs:label ?label .
+
+    FILTER(REGEX(?label, "Cattedrale di Santa Maria del Fiore", "i"))
+
+    ?cathedral a-cd:hasAuthor ?authorEntity .
+    ?authorEntity rdfs:label ?authorLabel .
+
+    FILTER(REGEX(?authorLabel, "Filippo Brunelleschi", "i"))
+  }
+
+  OPTIONAL { ?cathedral a-cd:depiction ?depiction }
+}
+
+ORDER BY ASC(?label)
+LIMIT 10
+</pre>
+
+<p>
+    The results of this query can be viewed here:
+    <a href="https://dati.cultura.gov.it/sparql?default-graph-uri=&query=PREFIX+rdfs%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E%0D%0APREFIX+arco%3A+%3Chttps%3A%2F%2Fw3id.org%2Farco%2Fontology%2Farco%2F%3E%0D%0APREFIX+a-cd%3A+%3Chttps%3A%2F%2Fw3id.org%2Farco%2Fontology%2Fcatalogue%2F%3E%0D%0A%0D%0ASELECT+DISTINCT+%3Fcathedral+%3Flabel%0D%0AWHERE+%7B%0D%0A++%7B%0D%0A++++%3Fcathedral+a+arco%3AHistoricOrArtisticProperty+%3B%0D%0A+++++++++++++++rdfs%3Alabel+%3Flabel+.%0D%0A%0D%0A++++FILTER%28REGEX%28%3Flabel%2C+%22Cattedrale+di+Santa+Maria+del+Fiore%22%2C+%22i%22%29%29%0D%0A++++FILTER%28REGEX%28%3Flabel%2C+%22Brunelleschi%22%2C+%22i%22%29%29%0D%0A++%7D%0D%0A%0D%0A++UNION%0D%0A%0D%0A++%7B%0D%0A++++%3Fcathedral+a+arco%3AHistoricOrArtisticProperty+%3B%0D%0A+++++++++++++++rdfs%3Alabel+%3Flabel+.%0D%0A%0D%0A++++FILTER%28REGEX%28%3Flabel%2C+%22Cattedrale+di+Santa+Maria+del+Fiore%22%2C+%22i%22%29%29%0D%0A%0D%0A++++%3Fcathedral+a-cd%3AhasAuthor+%3FauthorEntity+.%0D%0A++++%3FauthorEntity+rdfs%3Alabel+%3FauthorLabel+.%0D%0A%0D%0A++++FILTER%28REGEX%28%3FauthorLabel%2C+%22Filippo+Brunelleschi%22%2C+%22i%22%29%29%0D%0A++%7D%0D%0A%0D%0A++OPTIONAL+%7B+%3Fcathedral+a-cd%3Adepiction+%3Fdepiction+%7D%0D%0A%7D%0D%0A%0D%0AORDER+BY+ASC%28%3Flabel%29%0D%0ALIMIT+10%0D%0A&format=text%2Fhtml&timeout=0&signal_void=on"
+       target="_blank">
+        LINK
+    </a>
+</p>
+
+<h2>Query 3</h2>
+
+<p>
+    We refined the previous query to exclude paintings and other artworks,
+    returning only architectural and heritage entries related to
+    <em>Santa Maria del Fiore</em>.
+</p>
+
+<pre class="query-box">
+PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+PREFIX arco: &lt;https://w3id.org/arco/ontology/arco/&gt;
+
+SELECT DISTINCT ?building ?label ?type
+WHERE {
+  ?building rdfs:label ?label ;
+            a ?type .
+  FILTER(REGEX(?label, "Santa Maria del Fiore", "i"))
+  FILTER(!REGEX(?label, "dipinto|pittura|affresco|tela", "i"))
+}
+LIMIT 20
+</pre>
+
+<p>
+    The results of this query can be viewed here:
+    <a href="https://dati.cultura.gov.it/sparql?default-graph-uri=&query=PREFIX+rdfs%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E%0D%0APREFIX+arco%3A+%3Chttps%3A%2F%2Fw3id.org%2Farco%2Fontology%2Farco%2F%3E%0D%0A%0D%0ASELECT+DISTINCT+%3Fbuilding+%3Flabel+%3Ftype%0D%0AWHERE+%7B%0D%0A++%3Fbuilding+rdfs%3Alabel+%3Flabel+%3B%0D%0A++++++++++++a+%3Ftype+.%0D%0A++FILTER%28REGEX%28%3Flabel%2C+%22Santa+Maria+del+Fiore%22%2C+%22i%22%29%29%0D%0A++FILTER%28%21REGEX%28%3Flabel%2C+%22dipinto%7Cpittura%7Caffresco%7Ctela%22%2C+%22i%22%29%29%0D%0A%7D%0D%0ALIMIT+20%0D%0A&format=text%2Fhtml&timeout=0&signal_void=on"
+       target="_blank">
+        LINK
+    </a>
+</p>
+
+<p>
+    This makes it very easy to find the location of the building you need by clicking on the second link:
+    <a href="https://dati.beniculturali.it/lodview/mibact/luoghi/resource/CulturalInstituteOrSite/102957.html"
+       target="_blank">
+        LINK
+    </a>
+</p>
+
+<img src="images/Santamaria.jpg" width="700" height="400" alt="Santa Maria del Fiore">
+
+    </main>
+
+     <footer>
+        Knowledge Engineering for The Humanities (LM) 2026
+    </footer>
+    <link rel="stylesheet" href="style.css">
+</body>
+</html>

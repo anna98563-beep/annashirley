@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+   
+   
+   
+    <title>Conclusions</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Comic Sans MS, sans-serif;
+            text-align: center;
+            background-color: #f0c294   
+            ;
+           
+        }
+        .hero-image img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    display: block;
+}
+        
+
+        /* Header */
+        header {
+            background-color: #5c4033;
+            padding: 15px 0;
+            border-bottom: 1px solid #5c4033;
+        }
+
+        nav a {
+            margin: 0 60px;
+            text-decoration: none;
+            color: rgb(249, 251, 252);
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #d4a373;
+        }
+
+        /* Sections */
+        section {
+            margin: 100px auto;
+            max-width: 800px;
+        }
+
+        h1 {
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 50px;
+        }
+
+        p {
+            font-size: 18px;
+        }
+
+
+
+
+        /* Creators */
+        .creators {
+            display: flex;
+            justify-content: center;
+            gap: 80px;
+            margin-top: 30px;
+        }
+
+        .creator {
+            text-align: center;
+        }
+
+        .photo {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            border: 2px solid #000;
+            object-fit: cover;
+        }
+
+        .name {
+            margin-top: 10px;
+            font-style: italic;
+            font-size: 18px;
+        }
+        footer {
+            background-color: #5c4033;
+            color: white;
+            padding: 15px 20px;
+          
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            text-align:left;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="studying.html">Studying</a>
+            <a href="SPARQL queries.html">SPARQL queries</a>
+            <a href="gap analysis.html">Gap Analysis</a>
+            <a href="LLM Prompts.html">LLM Prompts</a>
+            <a href="conclusions.html">Conclusions</a>
+        </nav>
+    </header>
+
+<section id="conclusion">
+    <h1>Conclusion</h1>
+
+    <p>
+        Working on Brunelleschi's Dome gave us a concrete sense of both what semantic web tools can do for cultural heritage and where their limits are. Querying ArCo taught us that good results depend heavily on how a question is framed: small changes in keywords or query structure could mean the difference between finding useful data and finding nothing at all. In our case, the dome itself turned out to be one of those gaps, a monument central to Florence's identity, yet with no dedicated entry in the ontology we searched.
+    </p>
+
+    <p>
+        That gap became the starting point for the second part of our work. Rather than treating the absence of data as a dead end, we used it as an opportunity to test what LLMs could offer instead. Asking ChatGPT and Gemini to describe the dome produced two genuinely different texts, not just in tone but in what each model chose to focus on: one leaned toward a broad, visitor-friendly overview, the other toward a tighter, more technical account of how the structure actually works.
+    </p>
+
+    <p>
+        Overall, ArCo offers precision but incomplete coverage, while LLMs offer fluency but not always accuracy. Using AI to draft content where ArCo falls short, then verifying it, proved to be a practical way to handle these gaps. A natural next step would be adding structured entries on the dome's construction, engineering, and perceptual effects back into ArCo, so future queries don't return empty results.
+    </p>
+</section>
+
+<section id="future-developments">
+    <h1>Future Developments</h1>
+
+    <p>
+        Looking ahead, new RDF triples could be created for Brunelleschi's Dome covering its construction date, dimensions, structural technique, and its relationship to the cathedral, linking it to existing ArCo classes such as "Architectural or Landscape Heritage."
+    </p>
+
+    <p>
+        The ontology could also be explored for ways to represent more interpretive or experiential information, since perceptual effects like the "illusion of size" do not fit neatly into a purely factual data model.
+    </p>
+
+    <p>
+        On the LLM side, testing more structured prompting techniques such as few-shot or chain-of-thought could help reduce inconsistencies between models, alongside a systematic cross-validation step using a third model or academic sources when outputs disagree.
+    </p>
+
+    <p>
+        Finally, this same approach could be extended to other under-documented monuments in Florence and beyond, helping build a more complete picture of the city's architectural heritage within the ontology.
+    </p>
+</section>
+
+
+
+
+
+     <footer>
+        Knowledge Engineering for The Humanities (LM) 2026
+    </footer>

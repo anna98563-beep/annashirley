@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPARQL queries</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Comic Sans MS, sans-serif;
+            text-align: center;
+            background-color: #f0c294   
+            ;
+           
+        }
+        .hero-image img {
+    width: 90%;
+    height: 400px;
+    object-fit: cover;
+    display: block;
+}
+        
+
+        /* Header */
+        header {
+            background-color: #5c4033;
+            padding: 15px 0;
+            border-bottom: 1px solid #5c4033;
+        }
+
+        nav a {
+            margin: 0 60px;
+            text-decoration: none;
+            color: rgb(249, 251, 252);
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #d4a373;
+        }
+
+        /* Sections */
+        section {
+            margin: 100px auto;
+            max-width: 800px;
+        }
+
+        h1 {
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 50px;
+            margin-top: 50px;
+        }
+
+        p {
+            font-size: 18px;
+        }
+
+
+
+
+        /* Creators */
+        .creators {
+            display: flex;
+            justify-content: center;
+            gap: 80px;
+            margin-top: 30px;
+        }
+
+        .creator {
+            text-align: center;
+        }
+
+        .photo {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            border: 2px solid #000;
+            object-fit: cover;
+        }
+
+        .name {
+            margin-top: 10px;
+            font-style: italic;
+            font-size: 18px;
+        }
+        footer {
+            background-color: #5c4033;
+            color: white;
+            padding: 15px 20px;
+          
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            text-align:left;
+            box-sizing: border-box;
+        }
+        .query-box {
+    background-color: #f5f5f5;
+    border-left: 6px solid #5c4033;
+    padding: 25px;
+    text-align: left;
+    white-space: pre-wrap;
+    font-size: 18px;
+    margin: 30px auto;
+    width: 85%;
+}
+ 
+        main {
+    padding-bottom: 100px;
+}
+    </style>
+</head>
+<body>
+
+     <!-- Header -->
+    <header>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="studying.html">Studying</a>
+            <a href="SPARQL queries.html">SPARQL queries</a>
+            <a href="gap analysis.html">Gap Analysis</a>
+            <a href="LLM Prompts.html">LLM Prompts</a>
+            <a href="conclusions.html">Conclusions</a>
+        </nav>
+    </header>
+
+
+    <main>
+    <h1>Huge Informational Gap</h1>
+
+<p>
+    After analyzing all our SPARQL queries, we came to the disappointing result
+    that ArCo completely lacks information about the architect of the dome of
+    the Cathedral of Santa Maria del Fiore. When searching for the cathedral
+    and its architect, the results are zero. When searching for
+    <i>Santa Maria del Fiore</i> OR <i>cupola</i>, it returns the results of
+    random domes, among which there is no necessary one.
+</p>
+
+<p>
+    The basilica is one of the world's largest churches, and its dome is still
+    the largest masonry dome ever constructed.
+</p>
+
+<p>
+    So we searched for what we could actually find by searching for
+    <i>Filippo Brunelleschi</i>.
+</p>
+
+<pre class="query-box">
+PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+PREFIX arco: &lt;https://w3id.org/arco/ontology/arco/&gt;
+
+SELECT DISTINCT ?entity ?label
+WHERE {
+    ?entity rdfs:label ?label .
+
+    FILTER(CONTAINS(
+        LCASE(STR(?label)),
+        "filippo brunelleschi"
+    ))
+}
+LIMIT 100
+</pre>
+<p>
+    The query produces no results. This proves that ArCo does not contain information about the architecture of the dome, as the only church we find is Chiesa di San Lorenzo.
+
+    <a href="https://dati.cultura.gov.it/sparql?default-graph-uri=&query=PREFIX+rdfs%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E%0D%0APREFIX+arco%3A+%3Chttps%3A%2F%2Fw3id.org%2Farco%2Fontology%2Farco%2F%3E%0D%0A%0D%0ASELECT+DISTINCT+%3Fentity+%3Flabel%0D%0AWHERE+%7B%0D%0A++++%3Fentity+rdfs%3Alabel+%3Flabel+.%0D%0A%0D%0A++++FILTER%28CONTAINS%28%0D%0A++++++++LCASE%28STR%28%3Flabel%29%29%2C%0D%0A++++++++%22filippo+brunelleschi%22%0D%0A++++%29%29%0D%0A%7D%0D%0ALIMIT+100%0D%0A&format=text%2Fhtml&timeout=0&signal_void=on.html"
+       target="_blank">
+        LINK
+    </a>
+    </p>
+
+<img src="images/result1.jpg" width="500" height="300" alt="result1">
+
+<p>
+    To replenish ArCo by completing such an important piece of information, we need to connect two sources. We will do this using RDF triples written in Turtle syntax. The missing information was found on wikipedia at this link.
+    <a href="https://en.wikipedia.org/wiki/Florence_Cathedral" target="_blank">LINK</a>
+</p>
+
+<img src="images/turtle.jpg" alt="turtle syntax example" width="600" height="200">
+<p>
+    The syntax was tested in RDF playground and found to be correct.
+</p>
+
+<p>
+    Subject: The Santa Maria del Fiore cathedral resource page within the ArCo database.
+</p>
+<p>
+    Object: The Florence Cathedral article page on Wikipedia.
+</p>
+<p>
+    owl:sameAs: Declares that both resources represent the exact same real-world entity, mapped across two different databases.
+</p>
+<p>
+    dcterms:relation: Expresses a broader, non-identical link—capturing the shared historical and cultural context between the two resources.
+</p>
+
+    </main>
+
+
+
+
+
+      <footer>
+        Knowledge Engineering for The Humanities (LM) 2026
+    </footer>
+    </body>
+    <html>
