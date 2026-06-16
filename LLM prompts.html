@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPARQL queries</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Comic Sans MS, sans-serif;
+            text-align: center;
+            background-color: #f0c294   
+            ;
+           
+        }
+        .hero-image img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    display: block;
+}
+        
+
+        /* Header */
+        header {
+            background-color: #5c4033;
+            padding: 15px 0;
+            border-bottom: 1px solid #5c4033;
+        }
+
+        nav a {
+            margin: 0 60px;
+            text-decoration: none;
+            color: rgb(249, 251, 252);
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #d4a373;
+        }
+
+        /* Sections */
+        section {
+            margin: 100px auto;
+            max-width: 800px;
+        }
+
+        h1 {
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 50px;
+        }
+
+        p {
+            font-size: 18px;
+        }
+
+
+
+
+        /* Creators */
+        .creators {
+            display: flex;
+            justify-content: center;
+            gap: 80px;
+            margin-top: 30px;
+        }
+
+        .creator {
+            text-align: center;
+        }
+
+        .photo {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            border: 2px solid #000;
+            object-fit: cover;
+        }
+
+        .name {
+            margin-top: 10px;
+            font-style: italic;
+            font-size: 18px;
+        }
+        footer {
+            background-color: #5c4033;
+            color: white;
+            padding: 15px 20px;
+          
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            text-align:left;
+            box-sizing: border-box;
+        }
+        .query-box {
+    background-color: #f5f5f5;
+    border-left: 6px solid #5c4033;
+    padding: 25px;
+    text-align: left;
+    white-space: pre-wrap;
+    font-size: 18px;
+    margin: 30px auto;
+    width: 85%;
+}
+  footer {
+            background-color: #5c4033;
+            color: white;
+            padding: 15px 20px;
+          
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            text-align:left;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+
+     <!-- Header -->
+    <header>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="studying.html">Studying</a>
+            <a href="SPARQL queries.html">SPARQL queries</a>
+            <a href="gap analysis.html">Gap Analysis</a>
+            <a href="LLM prompts.html">LLM prompts</a>
+            <a href="conclusions.html">Conclusions</a>
+        </nav>
+    </header>
+
+	<section id="llm-comparison">
+	<h1>Introduction</h1>
+
+    <p>
+        Large Language Models (LLMs) are artificial intelligence systems trained on vast amounts of textual data to understand and generate human language. These models, such as ChatGPT and Gemini, are increasingly used to access, summarize, and interpret information related to cultural heritage.
+    </p>
+
+    <p>
+        This project focuses on the Cattedrale di Santa Maria del Fiore in Florence, one of the most iconic examples of Gothic and Renaissance architecture. The purpose of this study is to evaluate how different LLMs describe and contextualize this monument, analyzing their responses to a set of structured prompts.
+    </p>
+
+    <p>
+        By comparing ChatGPT and Gemini, the project aims to explore their strengths and limitations in generating historical and architectural knowledge. It also considers how structured knowledge sources, such as ArCo, represent similar information and where gaps may exist in comparison to AI-generated explanations.
+    </p>
+
+
+    <h1>Prompt Design Explanation</h1>
+
+    <p>
+        The prompts in this project were carefully designed to test different levels of understanding of Santa Maria del Fiore Cathedral, including factual knowledge, interpretative explanation, and critical thinking.
+    </p>
+
+    <p>
+        Each question was created with a specific purpose: the factual prompt aimed to evaluate the accuracy of basic historical and architectural information; the interpretative prompt explored how language models explain historical significance and technical achievements; and the critical thinking prompt tested the ability of the models to reason about intentions, perception, and architectural effects.
+    </p>
+
+    <p>
+        The goal of this design was to ensure a balanced comparison between ChatGPT and Gemini, analyzing not only correctness, but also depth, reasoning ability, and consistency of responses.
+    </p>
+
+
+    <h1>Research Questions</h1>
+
+
+    <h2>Prompt 1 - Interpretative</h2>
+
+    <h3>Question</h3>
+
+    <p>
+        <strong>Explain how Brunelleschi's dome was built and why it is revolutionary?</strong>
+    </p>
+
+
+    <h3>ChatGPT</h3>
+
+    <p>
+        Filippo Brunelleschi built the dome of Santa Maria del Fiore in Florence between 1420 and 1436. At the time, it was the largest dome ever constructed, and many people believed it was impossible to build because the opening was too wide for traditional methods.
+    </p>
+
+    <p>
+        Brunelleschi solved this problem by designing a double-shell dome. The dome consists of an inner and an outer shell connected by ribs, making it lighter and stronger. Instead of using a huge wooden support structure (called centering), which would have been extremely expensive and difficult to build, he developed a new construction method that allowed the dome to support itself as it rose.
+    </p>
+
+    <p>
+        One of his most innovative ideas was the herringbone brick pattern, in which bricks were arranged in a zigzag design. This prevented the bricks from sliding outward during construction and helped distribute the weight evenly.
+    </p>
+
+    <p>
+        The dome was revolutionary because it combined engineering, mathematics, and architecture in a completely new way. It demonstrated that ancient Roman building techniques could be improved and inspired the architecture of the Renaissance. Today, Brunelleschi’s dome remains one of the greatest engineering achievements in history and a symbol of Florence.
+    </p>
+
+
+    <h3>Gemini</h3>
+
+    <p>
+        Filippo Brunelleschi's dome for the Florence Cathedral, completed in 1436, is an architectural masterpiece that solved a seemingly impossible engineering puzzle: how to build a massive, 150-foot-wide masonry dome high in the air without any supporting wooden scaffolding or external flying buttresses.
+    </p>
+
+    <p>
+        To achieve this, Brunelleschi engineered a revolutionary pointed, octagonal design consisting of two nested shells—a thick inner dome for structural support and a lighter outer dome for weather protection. He kept the structure from collapsing inward during construction by laying the bricks in a unique interlocking herringbone pattern, where vertical bricks acted as anchors to secure the horizontal rows while the mortar dried.
+    </p>
+
+    <p>
+        He also embedded hidden iron and stone tension chains within the walls to counteract the outward pressure of the dome's immense weight, and he invented entirely new ox-powered hoists and cranes to lift materials hundreds of feet into the air.
+    </p>
+
+    <p>
+        This triumph was revolutionary because it fundamentally transformed architecture from a trial-and-error craft into a precise science based on mathematics and blueprints, launching the modern role of the architect and embodying the intellectual confidence of the Italian Renaissance while serving as the structural blueprint for future landmarks like St. Peter’s Basilica and the U.S. Capitol.
+    </p>
+
+
+    <h3>Comparison</h3>
+
+    <p><strong>Clarity:</strong> ChatGPT is clearer, with short paragraphs and a progressive structure (problem → solution → innovations → legacy). Gemini is denser, with very long sentences that pile up several pieces of information in a row.</p>
+
+    <p><strong>Detail:</strong> Gemini provides more technical details: it mentions the iron and stone tension chains, the hoists and cranes invented by Brunelleschi, the pointed octagonal shape, and references to later buildings. ChatGPT is more general and sticks to the basics.</p>
+
+    <p><strong>Accuracy:</strong> Both are broadly correct, although Gemini oversimplifies by claiming there was no supporting scaffolding whatsoever.</p>
+
+    <p><strong>Errors:</strong></p>
+
+    <ul>
+        <li>Gemini: the claim of "without any support" is imprecise and overstated.</li>
+        <li>ChatGPT: contains no major errors, but is less complete.</li>
+    </ul>
+
+    <p>
+        <strong>Conclusion:</strong> Gemini gives a richer and technically more complete answer, but with an excessive oversimplification regarding the scaffolding. ChatGPT is clearer and safer in what it says, though more superficial. If depth is the priority, Gemini wins; if clarity without the risk of misleading nuances is the safer choice, ChatGPT is preferable.
+    </p>
+
+
+    <h2>Prompt 2 - Critical Thinking</h2>
+
+    <h3>Question</h3>
+
+    <p>
+        <strong>Did architects intentionally design the cathedral to look larger than it is, or did this effect happen because of construction limitations?</strong>
+    </p>
+
+
+    <h3>ChatGPT</h3>
+
+    <p>
+        The impression that Santa Maria del Fiore is larger than it actually is was mainly the result of intentional design rather than a consequence of construction limitations. The architects carefully planned the cathedral to appear monumental and impressive, reflecting the power, wealth, and importance of Florence during the Renaissance.
+    </p>
+
+    <p>
+        Features such as the enormous dome, strong vertical lines, harmonious proportions, and the open space surrounding the building create a visual effect that makes the cathedral seem even more massive.
+    </p>
+
+    <p>
+        Although engineers faced significant challenges in constructing such a large structure, especially the dome designed by Filippo Brunelleschi, the solutions developed to overcome these obstacles ultimately enhanced the cathedral’s grandeur.
+    </p>
+
+    <p>
+        Therefore, the illusion of greater size can be understood as a combination of deliberate architectural choices and innovative engineering, with the primary goal of creating one of the most awe-inspiring buildings of its time.
+    </p>
+
+
+    <h3>Gemini</h3>
+
+    <p>
+        When you walk into Santa Maria del Fiore, you are experiencing a brilliant tension between deliberate architectural illusion and accidental scale born from severe engineering limits.
+    </p>
+
+    <p>
+        The architects of the nave intentionally manipulated the spacing of the massive pillars to create an optical perspective effect that stretches the central aisle, making the interior feel longer.
+    </p>
+
+    <p>
+        Conversely, the visual impact of Brunelleschi's dome was influenced by construction limitations, including the ban on external flying buttresses and the shortage of timber needed for traditional centering.
+    </p>
+
+    <p>
+        Brunelleschi's self-supporting double-shell solution ultimately amplified the dome's visual dominance over Florence.
+    </p>
+
+
+    <h3>Comparison</h3>
+
+    <p><strong>Clarity:</strong> ChatGPT is clearer but generic. Gemini directly addresses the dilemma with specific examples.</p>
+
+    <p><strong>Detail:</strong> Gemini provides more historical context and concrete evidence, while ChatGPT remains general.</p>
+
+    <p><strong>Accuracy:</strong> Gemini is better grounded in historical facts, though some claims are presented with greater certainty than evidence may justify.</p>
+
+    <p><strong>Errors:</strong></p>
+
+    <ul>
+        <li>ChatGPT: no obvious factual errors, but lacks specificity.</li>
+        <li>Gemini: repeats the overstatement regarding "zero external supports" and presents debated interpretations as settled facts.</li>
+    </ul>
+
+    <p>
+        <strong>Conclusion:</strong> Gemini offers a richer and more argumentative answer, although it occasionally overstates its certainty. ChatGPT is easier to read but less analytical.
+    </p>
+
+
+    <h2>Prompt 3 - Factual</h2>
+
+    <h3>Question</h3>
+
+    <p>
+        <strong>What significant modifications have been made to Santa Maria del Fiore Cathedral after its initial construction?</strong>
+    </p>
+
+
+    <h3>ChatGPT</h3>
+
+    <p>
+        Although Santa Maria del Fiore Cathedral was largely completed in the 15th century, several important modifications were made after its initial construction.
+    </p>
+
+    <p>
+        The most significant change was the addition of the current Neo-Gothic marble façade, designed by Emilio De Fabris and completed in 1887.
+    </p>
+
+    <p>
+        Various restoration projects have also been carried out to preserve the cathedral’s structure, artworks, frescoes, stained-glass windows, marble floors, and Brunelleschi’s dome.
+    </p>
+
+
+    <h3>Gemini</h3>
+
+    <p>
+        Following its consecration in 1436, Santa Maria del Fiore underwent several major transformations.
+    </p>
+
+    <p>
+        Brunelleschi's lantern was completed posthumously, and Andrea del Verrocchio’s gilded copper sphere was added in 1471.
+    </p>
+
+    <p>
+        The original terracotta floor was replaced with geometric marble pavement during the 16th century, while Giorgio Vasari and Federico Zuccari painted the monumental fresco of the Last Judgment between 1572 and 1579.
+    </p>
+
+    <p>
+        The unfinished Gothic façade was demolished in 1587 and replaced centuries later by Emilio De Fabris’s Neo-Gothic façade between 1871 and 1887.
+    </p>
+
+
+    <h3>Comparison</h3>
+
+    <p><strong>Clarity:</strong> ChatGPT is simpler and easier to follow. Gemini is denser but still organized chronologically.</p>
+
+    <p><strong>Detail:</strong> Gemini includes dates, names, and specific interventions that enrich the factual account.</p>
+
+    <p><strong>Accuracy:</strong> Both answers are largely accurate, though Gemini provides more verifiable historical detail.</p>
+
+    <p><strong>Errors:</strong></p>
+
+    <ul>
+        <li>ChatGPT: no factual errors, but the response is generic.</li>
+        <li>Gemini: only minor discrepancies in façade dating found across sources.</li>
+    </ul>
+
+    <p>
+        <strong>Conclusion:</strong> Gemini is the stronger factual response because of its specificity and historical richness. ChatGPT remains clear and reliable, but too general for a detailed factual analysis.
+    </p>
+
+
+</section>
+
+
+	 <footer>
+        Knowledge Engineering for The Humanities (LM) 2026
+    </footer>
+    </body>
+</html>
