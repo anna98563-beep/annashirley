@@ -10,7 +10,7 @@
     <style>
         body {
             margin: 0;
-            font-family:'Open Sans', sans-serif;
+            font-family: 'Open Sans', sans-serif;
             text-align: center;
             background-color: #f0c294   
             ;
@@ -124,14 +124,14 @@
             <a href="studying.html">Studying</a>
             <a href="SPARQL queries.html">SPARQL queries</a>
             <a href="gap analysis.html">Gap Analysis</a>
-            <a href="llm-prompts.html">LLM Prompts</a>
+            <a href="LLM Prompts.html">LLM Prompts</a>
             <a href="conclusions.html">Conclusions</a>
         </nav>
     </header>
 
 
     <main>
-    <h1>Huge Informational Gap</h1>
+    <h1>Huge Informational Gap 1</h1>
 
 <p>
     After analyzing all our SPARQL queries, we came to the disappointing result
@@ -200,6 +200,38 @@ LIMIT 100
 <p>
     dcterms:relation: Expresses a broader, non-identical link—capturing the shared historical and cultural context between the two resources.
 </p>
+
+
+<h1> Gap 2 </h1>
+
+<p>
+    If it's not good, there's no connection between the cathedral and the architect of its dome. So we should add a triple linking these two topics.
+</p>
+<img src="images/triple2.jpg" alt="triple2" width="600" height="200">
+<p>
+Subject — the Santa Maria del Fiore page in ArCo.
+</p>
+<p>
+Object — the Filippo Brunelleschi page in Wikidata (Q174330)
+</p>
+<p>
+dcterms:relation — expresses a broad historical relationship between the cathedral and the architect.
+</p>
+<p>
+dbo:architect — a more specific property from the DBpedia ontology that explicitly states that Filippo Brunelleschi was the architect of the building.
+</p>
+
+<h2> Connection process</h2>
+<p> 
+    As a result, we get a semantic graph that links data from various independent sources (the Italian Ministry of Culture, Wikipedia and Wikidata) into a single semantic network so that the computer can understand how the cathedral, its architect and official documents are interconnected.
+</p>
+<img src="images/graph2.jpg" alt="graph2" width="600" height="400">
+
+
+    
+
+
+
 
     </main>
 
