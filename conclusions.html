@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+   
+   
+   
+    <title>Conclusions</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Comic Sans MS, sans-serif;
+            text-align: center;
+            background-color: #f0c294   
+            ;
+           
+        }
+        .hero-image img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    display: block;
+}
+        
+
+        /* Header */
+        header {
+            background-color: #5c4033;
+            padding: 15px 0;
+            border-bottom: 1px solid #5c4033;
+        }
+
+        nav a {
+            margin: 0 60px;
+            text-decoration: none;
+            color: rgb(249, 251, 252);
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #d4a373;
+        }
+
+        /* Sections */
+        section {
+            margin: 100px auto;
+            max-width: 800px;
+        }
+
+        h1 {
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 50px;
+        }
+
+        p {
+            font-size: 18px;
+        }
+
+
+
+
+        /* Creators */
+        .creators {
+            display: flex;
+            justify-content: center;
+            gap: 80px;
+            margin-top: 30px;
+        }
+
+        .creator {
+            text-align: center;
+        }
+
+        .photo {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            border: 2px solid #000;
+            object-fit: cover;
+        }
+
+        .name {
+            margin-top: 10px;
+            font-style: italic;
+            font-size: 18px;
+        }
+        footer {
+            background-color: #5c4033;
+            color: white;
+            padding: 15px 20px;
+          
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            text-align:left;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="studying.html">Studying</a>
+            <a href="SPARQL queries.html">SPARQL queries</a>
+            <a href="gap analysis.html">Gap Analysis</a>
+            <a href="LLM Prompts.html">LLM Prompts</a>
+            <a href="conclusions.html">Conclusions</a>
+        </nav>
+    </header>
+
+<section id="conclusion">
+   
+
+    <h1>Conclusion</h1>
+
+    <p>
+        Working on the Cattedrale di Santa Maria del Fiore provided a clear understanding of both the capabilities and limitations of combining structured knowledge sources such as ArCo with Large Language Models. Querying ArCo highlighted how dependent results are on data coverage and structure: while it is highly precise when information is available, certain aspects of the cathedral remain partially represented or fragmented, particularly those related to architectural interpretation and later historical modifications.
+    </p>
+
+    <p>
+        This limitation became the starting point for the second part of the analysis. By using ChatGPT and Gemini, it was possible to explore how LLMs compensate for missing structured data by generating coherent narrative explanations. However, the comparison also revealed important differences between the models: ChatGPT generally provided more structured and detailed responses, while Gemini tended to produce broader, more descriptive explanations with varying levels of specificity depending on the prompt type.
+    </p>
+
+    <p>
+        Overall, the study shows a clear contrast between structured ontologies and generative AI systems. ArCo ensures accuracy and formal consistency but lacks completeness in certain cultural or interpretative dimensions, whereas LLMs offer flexibility and fluency but may introduce generalizations or uneven levels of precision. This makes critical evaluation essential when using AI systems for cultural heritage interpretation.
+    </p>
+
+
+    <h1>Challenges</h1>
+
+    <p>
+        One of the initial challenges of this project was understanding how SPARQL queries are structured and how to formulate them accurately. This query language requires a very precise syntax and logical structure, and even small mistakes can lead to incorrect or empty results. As a result, learning to design effective queries involved a significant amount of trial and error and practice.
+    </p>
+
+    <p>
+        In addition, the ArCo SPARQL endpoint was at times slow or unresponsive, which made the process of testing and refining queries more difficult and time-consuming. This affected the workflow, as each modification had to be carefully checked to ensure that the system was responding correctly.
+    </p>
+
+
+    <h1>Future Developments</h1>
+
+    <p>
+        Future work could expand this approach by enriching structured knowledge bases such as ArCo with more detailed entries related to Santa Maria del Fiore Cathedral, particularly in areas such as architectural modifications, conservation history, and interpretative aspects of design. This would help reduce current gaps between structured data and human-readable explanations.
+    </p>
+
+    <p>
+        On the LLM side, future experiments could include more advanced prompting strategies such as iterative prompting, few-shot learning, or chain-of-thought reasoning to improve consistency and reduce variation between models. Introducing a third model or external academic sources for cross-validation could also strengthen the reliability of comparisons.
+    </p>
+
+    <p>
+        Finally, this methodology could be extended to other cultural heritage sites in Florence or beyond, allowing for a broader evaluation of how well AI systems support the understanding of architectural and historical heritage across different contexts.
+    </p>
+
+
+</section>
+</body>
+
+
+
+     <footer>
+        Knowledge Engineering for The Humanities (LM) 2026
+    </footer>
+</html>
