@@ -136,94 +136,242 @@
         </nav>
     </header>
 
-	<section id="llm-comparison">
-	<h1>General Information</h1>
- 
-	<p>
-    	Large Language Models (LLMs) are artificial intelligence systems trained on vast amounts
-    	of textual data to understand and generate human language. These models are increasingly
-    	used to access, summarize, and interpret information related to cultural heritage.
-	</p>
- 
-	<p>
-    	The purpose of this section is to evaluate how different LLMs describe and contextualize
-    	the <strong>Cattedrale di Santa Maria del Fiore</strong>, one of the most iconic examples
-    	of Gothic and Renaissance architecture. By comparing their responses, this project aims
-    	to explore the strengths and limitations of AI-generated interpretations of historical
-    	and architectural knowledge.
-	</p>
- 
-	<p>The models were asked to discuss the following aspects of the cathedral:</p>
- 
-	<ol>
-    	<li>
-        	<strong>Dome</strong> – its historical importance, architectural innovation,
-        	and significance within the identity of Florence.
-    	</li>
- 
-    	<li>
-        	<strong>The Illusion of Size</strong> – how architectural elements,
-        	proportions, and spatial design contribute to the perception of the cathedral's
-        	monumental scale and grandeur.
-    	</li>
-	</ol>
- 
-	<p>The models compared in this project are:</p>
- 
-	<ul>
-    	<li>ChatGPT (OpenAI)</li>
-    	<li>Gemini (Google)</li>
+	<h1>Introduction</h1>
+
+    <p>
+        Large Language Models (LLMs) are artificial intelligence systems trained on vast amounts of textual data to understand and generate human language. These models, such as ChatGPT and Gemini, are increasingly used to access, summarize, and interpret information related to cultural heritage.
+    </p>
+
+    <p>
+        This project focuses on the Cattedrale di Santa Maria del Fiore in Florence, one of the most iconic examples of Gothic and Renaissance architecture. The purpose of this study is to evaluate how different LLMs describe and contextualize this monument, analyzing their responses to a set of structured prompts.
+    </p>
+
+    <p>
+        By comparing ChatGPT and Gemini, the project aims to explore their strengths and limitations in generating historical and architectural knowledge. It also considers how structured knowledge sources, such as ArCo, represent similar information and where gaps may exist in comparison to AI-generated explanations.
+    </p>
+
+
+    <h1>Prompt Design Explanation</h1>
+
+    <p>
+        The prompts in this project were carefully designed to test different levels of understanding of Santa Maria del Fiore Cathedral, including factual knowledge, interpretative explanation, and critical thinking.
+    </p>
+
+    <p>
+        Each question was created with a specific purpose: the factual prompt aimed to evaluate the accuracy of basic historical and architectural information; the interpretative prompt explored how language models explain historical significance and technical achievements; and the critical thinking prompt tested the ability of the models to reason about intentions, perception, and architectural effects.
+    </p>
+
+    <p>
+        The goal of this design was to ensure a balanced comparison between ChatGPT and Gemini, analyzing not only correctness, but also depth, reasoning ability, and consistency of responses.
+    </p>
+
+
+    <h1>Research Questions</h1>
+
+
+    <h2>Prompt 1 – Interpretative</h2>
+
+    <h3>Question</h3>
+
+    <p>
+        <strong>Explain how Brunelleschi’s dome was built and why it is revolutionary?</strong>
+    </p>
+
+
+    <h3>ChatGPT</h3>
+
+    <p>
+        Filippo Brunelleschi built the dome of Santa Maria del Fiore in Florence between 1420 and 1436. At the time, it was the largest dome ever constructed, and many people believed it was impossible to build because the opening was too wide for traditional methods.
+    </p>
+
+    <p>
+        Brunelleschi solved this problem by designing a double-shell dome. The dome consists of an inner and an outer shell connected by ribs, making it lighter and stronger. Instead of using a huge wooden support structure (called centering), which would have been extremely expensive and difficult to build, he developed a new construction method that allowed the dome to support itself as it rose.
+    </p>
+
+    <p>
+        One of his most innovative ideas was the herringbone brick pattern, in which bricks were arranged in a zigzag design. This prevented the bricks from sliding outward during construction and helped distribute the weight evenly.
+    </p>
+
+    <p>
+        The dome was revolutionary because it combined engineering, mathematics, and architecture in a completely new way. It demonstrated that ancient Roman building techniques could be improved and inspired the architecture of the Renaissance. Today, Brunelleschi’s dome remains one of the greatest engineering achievements in history and a symbol of Florence.
+    </p>
+
+
+    <h3>Gemini</h3>
+
+    <p>
+        Filippo Brunelleschi’s dome for the Florence Cathedral, completed in 1436, is an architectural masterpiece that solved a seemingly impossible engineering puzzle: how to build a massive, 150-foot-wide masonry dome high in the air without any supporting wooden scaffolding or external flying buttresses.
+    </p>
+
+    <p>
+        To achieve this, Brunelleschi engineered a revolutionary pointed, octagonal design consisting of two nested shells—a thick inner dome for structural support and a lighter outer dome for weather protection. He kept the structure from collapsing inward during construction by laying the bricks in a unique interlocking herringbone pattern, where vertical bricks acted as anchors to secure the horizontal rows while the mortar dried.
+    </p>
+
+    <p>
+        He also embedded hidden iron and stone tension chains within the walls to counteract the outward pressure of the dome's immense weight, and he invented entirely new ox-powered hoists and cranes to lift materials hundreds of feet into the air.
+    </p>
+
+    <p>
+        This triumph was revolutionary because it fundamentally transformed architecture from a trial-and-error craft into a precise science based on mathematics and blueprints, launching the modern role of the architect and embodying the intellectual confidence of the Italian Renaissance while serving as the structural blueprint for future landmarks like St. Peter’s Basilica and the U.S. Capitol.
+    </p>
+
+
+    <h3>Comparison</h3>
+
+    <p><strong>Clarity:</strong> ChatGPT is clearer, with short paragraphs and a progressive structure (problem → solution → innovations → legacy). Gemini is denser, with very long sentences that pile up several pieces of information in a row.</p>
+
+    <p><strong>Detail:</strong> Gemini provides more technical details: it mentions the iron and stone tension chains, the hoists and cranes invented by Brunelleschi, the pointed octagonal shape, and references to later buildings. ChatGPT is more general and sticks to the basics.</p>
+
+    <p><strong>Accuracy:</strong> Both are broadly correct, although Gemini oversimplifies by claiming there was no supporting scaffolding whatsoever.</p>
+
+    <p><strong>Errors:</strong></p>
+
+    <ul>
+        <li>Gemini: the claim of "without any support" is imprecise and overstated.</li>
+        <li>ChatGPT: contains no major errors, but is less complete.</li>
     </ul>
- 
-    <!-- DOME -->
-    <h2>1. Dome</h2>
- 
-	<div class="comparison-container">
- 
-    	<div class="ai-box">
-        	<h3>ChatGPT (OpenAI)</h3>
- 
-        	<p>
-            	The Dome of the Cathedral of Santa Maria del Fiore, commonly known as Brunelleschi’s Dome, is one of the greatest achievements of Renaissance architecture and engineering. Designed by Filippo Brunelleschi and built between 1420 and 1436, it was the largest dome in the world at the time and remains the largest masonry dome ever constructed. Rising about 116 meters (381 feet) above Florence, the dome has an internal diameter of 45.5 meters and was revolutionary because it was built without the traditional wooden scaffolding that architects had previously considered essential. Brunelleschi solved this challenge by creating a double-shell structure connected by ribs and using an innovative herringbone brick pattern that allowed the dome to support itself during construction. Inside, visitors can admire the immense fresco of the Last Judgment painted by Giorgio Vasari and later completed by Federico Zuccari. Climbing the 463 steps to the top rewards visitors with breathtaking panoramic views of Florence and the surrounding Tuscan landscape. Today, the dome remains the symbol of Florence and a masterpiece that transformed the history of architecture.
-        	</p>
-    	</div>
- 
-    	<div class="ai-box">
-        	<h3>Gemini (Google)</h3>
- 
-      	  <p>
-            	Engineered by Filippo Brunelleschi and completed in 1436, the dome of Cattedrale di Santa Maria del Fiore in Florence remains the largest masonry dome ever built. To span the massive 45-meter-wide octagonal opening without the support of traditional wooden scaffolding, Brunelleschi designed a revolutionary double-shell structure made of a light inner dome and a protective outer shell, defined on the exterior by its massive white marble ribs. He cleverly arranged millions of bricks in a self-supporting herringbone pattern—interlocking vertical and horizontal rows—to redirect the immense downward weight outward into the octagonal base, solving an engineering riddle that had baffled Renaissance builders for decades and permanently changing the course of Western architecture.
-        	</p>
-    	</div>
- 
-	</div>
- 
-	<!-- ILLUSION OF SIZE -->
-	<h2>2. The Illusion of Size</h2>
- 
-	<div class="comparison-container">
- 
-    	<div class="ai-box">
-        	<h3>ChatGPT (OpenAI)</h3>
- 
-        	<p>
-The illusion of the size of Santa Maria del Fiore Cathedral is created by several architectural techniques that make the building appear even larger and more impressive than it already is. The cathedral's enormous dome dominates the skyline of Florence and can be seen from many parts of the city, giving the impression that the building is closer and bigger than it actually is. Brunelleschi also designed the dome with a pointed shape and strong vertical lines that draw the viewer's eyes upward, emphasizing its height. In addition, the wide open spaces around the cathedral allow people to see the entire structure at once, making its scale feel overwhelming. Inside, the vast nave, high ceilings, and long perspective lines create a sense of endless space, making visitors perceive the interior as even larger than its actual dimensions. These visual effects were carefully planned to inspire awe and to demonstrate the wealth, power, and artistic achievements of Florence during the Renaissance.
-        	</p>
-    	</div>
- 
-    	<div class="ai-box">
-        	<h3>Gemini (Google)</h3>
- 
-        	<p>
-When step into the interior of Santa Maria del Fiore, you experience a striking, deliberate optical illusion: the cathedral initially feels much smaller, shorter, and more compact than its gargantuan exterior suggests. This is a psychological and architectural trick born from the Florentine Gothic style, which prioritized severe minimalism and massive human scale over the busy, soaring verticality of French Gothic churches.
-Instead of breaking the space up with hundreds of slender, repeating columns that give the eye a frame of reference for distance, the architects designed the nave with only four colossal, widely spaced bays (square sections) held up by massive, plain stone pillars. Because there are so few repeating architectural elements to count as your eyes scan the length of the building, your brain miscalculates the distance, condensing the vast space. The bare, austere whitewashed walls offer no decorative details or intricate carvings to provide a sense of depth, causing the walls to feel closer than they are. It is only when you notice the actual humans walking across the floor—looking like tiny, moving ants next to the towering columns—or when you stand directly beneath the dome and look up at the massive 3,600-square-meter Last Judgment fresco that the true, staggering scale of the world's fifth-largest cathedral suddenly hits you.
- 
-        	</p>
-    	</div>
- 
-	</div>
- 
-</section>
+
+    <p>
+        <strong>Conclusion:</strong> Gemini gives a richer and technically more complete answer, but with an excessive oversimplification regarding the scaffolding. ChatGPT is clearer and safer in what it says, though more superficial. If depth is the priority, Gemini wins; if clarity without the risk of misleading nuances is the safer choice, ChatGPT is preferable.
+    </p>
+
+
+    <h2>Prompt 2 – Critical Thinking</h2>
+
+    <h3>Question</h3>
+
+    <p>
+        <strong>Did architects intentionally design the cathedral to look larger than it is, or did this effect happen because of construction limitations?</strong>
+    </p>
+
+
+    <h3>ChatGPT</h3>
+
+    <p>
+        The impression that Santa Maria del Fiore is larger than it actually is was mainly the result of intentional design rather than a consequence of construction limitations. The architects carefully planned the cathedral to appear monumental and impressive, reflecting the power, wealth, and importance of Florence during the Renaissance.
+    </p>
+
+    <p>
+        Features such as the enormous dome, strong vertical lines, harmonious proportions, and the open space surrounding the building create a visual effect that makes the cathedral seem even more massive.
+    </p>
+
+    <p>
+        Although engineers faced significant challenges in constructing such a large structure, especially the dome designed by Filippo Brunelleschi, the solutions developed to overcome these obstacles ultimately enhanced the cathedral’s grandeur.
+    </p>
+
+    <p>
+        Therefore, the illusion of greater size can be understood as a combination of deliberate architectural choices and innovative engineering, with the primary goal of creating one of the most awe-inspiring buildings of its time.
+    </p>
+
+
+    <h3>Gemini</h3>
+
+    <p>
+        When you walk into Santa Maria del Fiore, you are experiencing a brilliant tension between deliberate architectural illusion and accidental scale born from severe engineering limits.
+    </p>
+
+    <p>
+        The architects of the nave intentionally manipulated the spacing of the massive pillars to create an optical perspective effect that stretches the central aisle, making the interior feel longer.
+    </p>
+
+    <p>
+        Conversely, the visual impact of Brunelleschi’s dome was influenced by construction limitations, including the ban on external flying buttresses and the shortage of timber needed for traditional centering.
+    </p>
+
+    <p>
+        Brunelleschi’s self-supporting double-shell solution ultimately amplified the dome's visual dominance over Florence.
+    </p>
+
+
+    <h3>Comparison</h3>
+
+    <p><strong>Clarity:</strong> ChatGPT is clearer but generic. Gemini directly addresses the dilemma with specific examples.</p>
+
+    <p><strong>Detail:</strong> Gemini provides more historical context and concrete evidence, while ChatGPT remains general.</p>
+
+    <p><strong>Accuracy:</strong> Gemini is better grounded in historical facts, though some claims are presented with greater certainty than evidence may justify.</p>
+
+    <p><strong>Errors:</strong></p>
+
+    <ul>
+        <li>ChatGPT: no obvious factual errors, but lacks specificity.</li>
+        <li>Gemini: repeats the overstatement regarding "zero external supports" and presents debated interpretations as settled facts.</li>
+    </ul>
+
+    <p>
+        <strong>Conclusion:</strong> Gemini offers a richer and more argumentative answer, although it occasionally overstates its certainty. ChatGPT is easier to read but less analytical.
+    </p>
+
+
+    <h2>Prompt 3 – Factual</h2>
+
+    <h3>Question</h3>
+
+    <p>
+        <strong>What significant modifications have been made to Santa Maria del Fiore Cathedral after its initial construction?</strong>
+    </p>
+
+
+    <h3>ChatGPT</h3>
+
+    <p>
+        Although Santa Maria del Fiore Cathedral was largely completed in the 15th century, several important modifications were made after its initial construction.
+    </p>
+
+    <p>
+        The most significant change was the addition of the current Neo-Gothic marble façade, designed by Emilio De Fabris and completed in 1887.
+    </p>
+
+    <p>
+        Various restoration projects have also been carried out to preserve the cathedral’s structure, artworks, frescoes, stained-glass windows, marble floors, and Brunelleschi’s dome.
+    </p>
+
+
+    <h3>Gemini</h3>
+
+    <p>
+        Following its consecration in 1436, Santa Maria del Fiore underwent several major transformations.
+    </p>
+
+    <p>
+        Brunelleschi’s lantern was completed posthumously, and Andrea del Verrocchio’s gilded copper sphere was added in 1471.
+    </p>
+
+    <p>
+        The original terracotta floor was replaced with geometric marble pavement during the 16th century, while Giorgio Vasari and Federico Zuccari painted the monumental fresco of the Last Judgment between 1572 and 1579.
+    </p>
+
+    <p>
+        The unfinished Gothic façade was demolished in 1587 and replaced centuries later by Emilio De Fabris’s Neo-Gothic façade between 1871 and 1887.
+    </p>
+
+
+    <h3>Comparison</h3>
+
+    <p><strong>Clarity:</strong> ChatGPT is simpler and easier to follow. Gemini is denser but still organized chronologically.</p>
+
+    <p><strong>Detail:</strong> Gemini includes dates, names, and specific interventions that enrich the factual account.</p>
+
+    <p><strong>Accuracy:</strong> Both answers are largely accurate, though Gemini provides more verifiable historical detail.</p>
+
+    <p><strong>Errors:</strong></p>
+
+    <ul>
+        <li>ChatGPT: no factual errors, but the response is generic.</li>
+        <li>Gemini: only minor discrepancies in façade dating found across sources.</li>
+    </ul>
+
+    <p>
+        <strong>Conclusion:</strong> Gemini is the stronger factual response because of its specificity and historical richness. ChatGPT remains clear and reliable, but too general for a detailed factual analysis.
+    </p>
+
+</body>
+	 <footer>
+        Knowledge Engineering for The Humanities (LM) 2026
+    </footer>
+
+</html>
+
 
 
 	 <footer>
