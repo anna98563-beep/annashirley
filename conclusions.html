@@ -117,45 +117,55 @@
     </header>
 
 <section id="conclusion">
+   
+
     <h1>Conclusion</h1>
 
     <p>
-        Working on Brunelleschi's Dome gave us a concrete sense of both what semantic web tools can do for cultural heritage and where their limits are. Querying ArCo taught us that good results depend heavily on how a question is framed: small changes in keywords or query structure could mean the difference between finding useful data and finding nothing at all. In our case, the dome itself turned out to be one of those gaps, a monument central to Florence's identity, yet with no dedicated entry in the ontology we searched.
+        Working on the Cattedrale di Santa Maria del Fiore provided a clear understanding of both the capabilities and limitations of combining structured knowledge sources such as ArCo with Large Language Models. Querying ArCo highlighted how dependent results are on data coverage and structure: while it is highly precise when information is available, certain aspects of the cathedral remain partially represented or fragmented, particularly those related to architectural interpretation and later historical modifications.
     </p>
 
     <p>
-        That gap became the starting point for the second part of our work. Rather than treating the absence of data as a dead end, we used it as an opportunity to test what LLMs could offer instead. Asking ChatGPT and Gemini to describe the dome produced two genuinely different texts, not just in tone but in what each model chose to focus on: one leaned toward a broad, visitor-friendly overview, the other toward a tighter, more technical account of how the structure actually works.
+        This limitation became the starting point for the second part of the analysis. By using ChatGPT and Gemini, it was possible to explore how LLMs compensate for missing structured data by generating coherent narrative explanations. However, the comparison also revealed important differences between the models: ChatGPT generally provided more structured and detailed responses, while Gemini tended to produce broader, more descriptive explanations with varying levels of specificity depending on the prompt type.
     </p>
 
     <p>
-        Overall, ArCo offers precision but incomplete coverage, while LLMs offer fluency but not always accuracy. Using AI to draft content where ArCo falls short, then verifying it, proved to be a practical way to handle these gaps. A natural next step would be adding structured entries on the dome's construction, engineering, and perceptual effects back into ArCo, so future queries don't return empty results.
+        Overall, the study shows a clear contrast between structured ontologies and generative AI systems. ArCo ensures accuracy and formal consistency but lacks completeness in certain cultural or interpretative dimensions, whereas LLMs offer flexibility and fluency but may introduce generalizations or uneven levels of precision. This makes critical evaluation essential when using AI systems for cultural heritage interpretation.
     </p>
-</section>
 
-<section id="future-developments">
+
+    <h1>Challenges</h1>
+
+    <p>
+        One of the initial challenges of this project was understanding how SPARQL queries are structured and how to formulate them accurately. This query language requires a very precise syntax and logical structure, and even small mistakes can lead to incorrect or empty results. As a result, learning to design effective queries involved a significant amount of trial and error and practice.
+    </p>
+
+    <p>
+        In addition, the ArCo SPARQL endpoint was at times slow or unresponsive, which made the process of testing and refining queries more difficult and time-consuming. This affected the workflow, as each modification had to be carefully checked to ensure that the system was responding correctly.
+    </p>
+
+
     <h1>Future Developments</h1>
 
     <p>
-        Looking ahead, new RDF triples could be created for Brunelleschi's Dome covering its construction date, dimensions, structural technique, and its relationship to the cathedral, linking it to existing ArCo classes such as "Architectural or Landscape Heritage."
+        Future work could expand this approach by enriching structured knowledge bases such as ArCo with more detailed entries related to Santa Maria del Fiore Cathedral, particularly in areas such as architectural modifications, conservation history, and interpretative aspects of design. This would help reduce current gaps between structured data and human-readable explanations.
     </p>
 
     <p>
-        The ontology could also be explored for ways to represent more interpretive or experiential information, since perceptual effects like the "illusion of size" do not fit neatly into a purely factual data model.
+        On the LLM side, future experiments could include more advanced prompting strategies such as iterative prompting, few-shot learning, or chain-of-thought reasoning to improve consistency and reduce variation between models. Introducing a third model or external academic sources for cross-validation could also strengthen the reliability of comparisons.
     </p>
 
     <p>
-        On the LLM side, testing more structured prompting techniques such as few-shot or chain-of-thought could help reduce inconsistencies between models, alongside a systematic cross-validation step using a third model or academic sources when outputs disagree.
+        Finally, this methodology could be extended to other cultural heritage sites in Florence or beyond, allowing for a broader evaluation of how well AI systems support the understanding of architectural and historical heritage across different contexts.
     </p>
 
-    <p>
-        Finally, this same approach could be extended to other under-documented monuments in Florence and beyond, helping build a more complete picture of the city's architectural heritage within the ontology.
-    </p>
+
 </section>
-
-
+</body>
 
 
 
      <footer>
         Knowledge Engineering for The Humanities (LM) 2026
     </footer>
+</html>
